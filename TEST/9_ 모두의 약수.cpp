@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// 다시 체크해보기
 int divisorCount[50001];
 
 int main() {
