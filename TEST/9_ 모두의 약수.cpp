@@ -11,7 +11,6 @@ int main() {
 
 	for (int i = 1; i <= input; i++) {
 		for (int j = i; j <= input; j = j + i) {
-
 			divisorCount[j]++;
 		}
 	}
