@@ -8,7 +8,7 @@ int main() {
 
 	int realAge, year;
 
-	// 태어난 연도 구하기 (문자는 아스키코드로 인식되므로 -8을 해주어야 한다.) 
+	// 태어난 연도 구하기 (문자는 아스키코드로 인식되므로 -48을 해주어야 한다.) 
 	if (privateNumber[0] != '0')
 		year = 1900 + ((privateNumber[0] - 48) * 10 + (privateNumber[1] - 48));
 	else
