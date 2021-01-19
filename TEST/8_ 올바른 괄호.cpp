@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-	//freopen("input.txt", "rt", stdin);
+	freopen("input.txt", "rt", stdin);
 
 	string input;
 	int number[30];
@@ -24,18 +24,22 @@ int main() {
 			if (input[i] == '(') {
 				number[i] = 1;
 			}
-			else if (input[i] == ')') {
+			else if (input[i] == ')') { // 중간에 -가 되는 경우도 올바른 입력이  아님. 
 				number[i] = -1;
 			}
 		}
 
 		for (int j = 0; j < 30; j++) {
 			count += number[j];
+			if (count < 0) {
+				cout << "NO";
+				break;
+			}
 		}
 
 		if (count == 0)
 			cout << "YES";
-		else
+		else if (count != 0 && count > 0)
 			cout << "NO";
 	}
 	else {
