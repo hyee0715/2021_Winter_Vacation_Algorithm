@@ -30,6 +30,10 @@ int main() {
 		}
 	}
 
-	cout << maxTime;
+	if (maxTime == 0)
+		cout << "-1" << endl;
+	else
+		cout << maxTime;
+
 	return 0;
 }
