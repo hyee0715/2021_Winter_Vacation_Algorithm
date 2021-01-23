@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+//코드 다시 체크하기
+
 int main() {
 	//freopen("input.txt", "rt", stdin);
 	int n; // 온도를 측정한 전체 날짜의 수 
