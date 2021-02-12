@@ -2,56 +2,50 @@
 #include <vector>
 using namespace std;
 
+// 코드 다시 체크하기 
+
 int main() {
 	//freopen("input.txt", "rt", stdin);
 
-	int n, m;
+	int n, m, result;
 	cin >> n;
-	vector<int> nArr(n);
+	vector<int> nArr(n + 1);
 
-	for (int i = 0; i < n; i++) {
+	for (int i = 1; i <= n; i++) {
 		cin >> nArr[i];
 	}
 
 	cin >> m;
-	vector<int> mArr(m);
+	vector<int> mArr(m + 1);
 
-	for (int i = 0; i < m; i++) {
+	for (int i = 1; i <= m; i++) {
 		cin >> mArr[i];
 	}
 
-	// nArr 배열과 mArr 배열을 합친 resultArr 배열 생성 
-	vector<int> resultArr(n + m);
+	vector<int> resultArr(300);
 
-	for (int i = 0; i < n; i++) {
-		resultArr[i] = nArr[i];
-	}
+	int p1 = 1, p2 = 1, p3 = 1; // 포인터
 
-	for (int i = 0; i < m; i++) {
-		resultArr[n + i] = mArr[i];
-	}
-
-	// 삽입정렬
-	int key, keyIndex;
-
-	for (int i = 1; i < n + m; i++) {
-		key = resultArr[i];
-		keyIndex = i;
-
-		for (int j = i - 1; j >= 0; j--) {
-			if (key < resultArr[j]) {
-				int temp = resultArr[j];
-				resultArr[j] = resultArr[keyIndex];
-				resultArr[keyIndex] = temp;
-
-				keyIndex = j;
-			}
+	while (p1 <= n && p2 <= m) {
+		if (nArr[p1] < mArr[p2]) {
+			resultArr[p3++] = nArr[p1++];
+		}
+		else {
+			resultArr[p3++] = mArr[p2++];
 		}
 	}
 
-	for (int i = 0; i < n + m; i++) {
-		cout << resultArr[i] << " ";
+	// 남은 부분은 마저 넣기
+	while (p1 <= n) {
+		resultArr[p3++] = nArr[p1++];
+	}
+	while (p2 <= m) {
+		resultArr[p3++] = mArr[p2++];
 	}
 
+	for (int i = 1; i < p3; i++) {
+		cout << resultArr[i] << " ";
+	}
 	return 0;
 }
+
