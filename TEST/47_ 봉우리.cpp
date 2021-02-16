@@ -10,7 +10,7 @@ int main() {
 	cin >> n;
 
 	int peaks = 0;
-	vector<vector<int>> arr(n + 2, vector<int>(n + 2));
+	vector<vector<int> > arr(n + 2, vector<int>(n + 2));
 
 	for (int i = 1; i < arr.size() - 1; i++) {
 		for (int j = 1; j < arr[i].size() - 1; j++) {
