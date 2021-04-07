@@ -18,7 +18,7 @@ void dfs(int x) {
 			}
 		}
 
-		if (sum == m) // 같은 값이 있으면 YES 출력 
+		if (sum == m)
 			sameCount++;
 	}
 	else {
